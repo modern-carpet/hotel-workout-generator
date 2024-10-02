@@ -3,109 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beginner Workout Generator</title>
+    <title>Hotel Workout Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Beginner Workout Generator</h1>
+            <h1>Hotel Workout Generator</h1>
         </header>
         <main>
-            <form id="workoutForm">
-                <div class="form-group">
-                    <label for="time">Time Available: <span id="timeValue">60 minutes</span></label>
+            <form id="workout-form">
+                <section class="form-section">
+                    <h2>Available Equipment (can select multiple)</h2>
+                    <div class="equipment-list">
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="dumbbells">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Dumbbells</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="kettlebells">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Kettlebells</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="barbells">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Barbells</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="bench">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Bench</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="resistance-bands">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Resistance Bands</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="treadmill">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Treadmill</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="bike">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Bike</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="rowing-machine">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Rowing Machine</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="machines-upper">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Machines (Upper Body)</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="machines-lower">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Machines (Lower Body)</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="bodyweight">
+                            <span class="checkbox-custom"></span>
+                            <span class="label-text">Bodyweight Only</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Workout Duration</h2>
                     <div class="slider-container">
-                        <input 
-                            type="range" 
-                            id="time" 
-                            name="time" 
-                            min="0" 
-                            max="120" 
-                            step="5" 
-                            value="60" 
-                            required
-                        >
+                        <input type="range" id="duration" name="duration" min="10" max="60" step="5" value="30">
+                        <output for="duration" id="duration-output">30 minutes</output>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="equipment">Equipment Available:</label>
-                    <select id="equipment" name="equipment" multiple required>
-                        <option value="bodyweight">Bodyweight only</option>
-                        <option value="dumbbells">Dumbbells</option>
-                        <option value="barbell">Barbell</option>
-                        <option value="machines">Gym machines</option>
-                        <option value="resistancebands">Resistance Bands</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="intensity">Intensity: <span id="intensityValue">Moderate</span></label>
-                    <div class="intensity-container">
-                        <input type="range" id="intensity" name="intensity" min="1" max="5" value="3" step="1">
-                        <div class="intensity-labels">
-                            <span>Easy</span>
-                            <span>Moderate</span>
-                            <span>Challenging</span>
-                            <span>Hard</span>
-                            <span>Intense</span>
-                        </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Fitness Level</h2>
+                    <div class="fitness-level-container">
+                        <label class="fitness-level-item">
+                            <input type="radio" name="fitness-level" value="beginner">
+                            <span class="radio-custom"></span>
+                            <span class="label-text">Beginner</span>
+                        </label>
+                        <label class="fitness-level-item">
+                            <input type="radio" name="fitness-level" value="intermediate">
+                            <span class="radio-custom"></span>
+                            <span class="label-text">Intermediate</span>
+                        </label>
+                        <label class="fitness-level-item">
+                            <input type="radio" name="fitness-level" value="advanced">
+                            <span class="radio-custom"></span>
+                            <span class="label-text">Advanced</span>
+                        </label>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="goal">Workout Goal:</label>
-                    <select id="goal" name="goal" required>
-                        <option value="">Select goal</option>
-                        <option value="weightloss">Weight Loss</option>
-                        <option value="strength">Strength Training</option>
-                        <option value="endurance">Endurance</option>
-                        <option value="muscle">Muscle Gain</option>
-                        <option value="flexibility">Flexibility</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="fitnessLevel">Fitness Level:</label>
-                    <select id="fitnessLevel" name="fitnessLevel" required>
-                        <option value="">Select fitness level</option>
-                        <option value="beginner">I've never gone to the gym before</option>
-                        <option value="intermediate">I work out occasionally</option>
-                        <option value="advanced">I'm an expert</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="focus">Workout Focus:</label>
-                    <select id="focus" name="focus" required>
-                        <option value="">Select focus</option>
-                        <option value="total">Total body</option>
-                        <option value="upper">Upper body</option>
-                        <option value="lower">Lower body</option>
-                        <option value="core">Core</option>
-                        <option value="cardio">Cardio</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender (for weight recommendations):</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">Select gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <button type="submit">Generate Workout</button>
+                </section>
+
+                <button type="submit" class="generate-btn">Generate Workout</button>
             </form>
-            <div id="workoutPlan"></div>
+
+            <div id="workout-plan" class="workout-plan"></div>
         </main>
-        <footer>
-            <p>&copy; 2024 Beginner Workout Generator. All rights reserved.</p>
-        </footer>
-    </div>
-    <div id="exerciseModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="exerciseName"></h2>
-            <p id="exerciseInstructions"></p>
-            <div id="exerciseVideo"></div>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
